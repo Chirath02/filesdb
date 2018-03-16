@@ -9,7 +9,9 @@ import subprocess
 class CoreTest(unittest.TestCase):
 
     def setUp(self):
-        # create a folder and file for testing
+        """
+        Create test folders and files
+        """
         self.test_dir = './test/'
         self.db_file = 'test-db.sqlite3'
         if not os.path.exists(self.test_dir):
@@ -19,11 +21,16 @@ class CoreTest(unittest.TestCase):
         fp.close()
 
     def tearDown(self):
+        """
+        Remove temp files and folders
+        """
         shutil.rmtree(self.test_dir)
         os.remove(self.db_file)
-        pass
 
     def test_quick_scan(self):
+        """
+        Tests if the quick command works correctly.
+        """
         command = 'python -m filesdb.core quickscan %s -d %s' % \
                   (self.test_dir, self.db_file)
 

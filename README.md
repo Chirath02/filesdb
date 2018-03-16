@@ -43,3 +43,12 @@ $ mkvirtualenv --python=/usr/bin/python3 filesdb
 $ workon filesdb
 $ pip install -r requirements.txt 
 ```
+
+### Tests
+
+The current tests checks the db scheme and checks the core functionality
+
+```bash
+$ python -m tests.test_models
+$ python -m tests.test_core
+```
