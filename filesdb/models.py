@@ -4,12 +4,14 @@ from sqlalchemy import create_engine, Column, Integer, String, Float, Date
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-db_file = 'db.sqlite3'
-
-engine = create_engine('sqlite:///' + db_file, echo=True)
-Session = sessionmaker(bind=engine)
-
 Base = declarative_base()
+
+
+def database_config(db_file='db.sqlite3'):
+    engine = create_engine('sqlite:///' + db_file)
+    Session = sessionmaker(bind=engine)
+
+    return engine, Session, Base
 
 
 class File(Base):
@@ -18,7 +20,7 @@ class File(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     path = Column(String)
-    size = Column(Float)
+    size = Column(Integer)
     file_name = Column(String)
     dir_name = Column(String)
 
