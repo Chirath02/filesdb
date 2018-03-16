@@ -2,7 +2,7 @@ import argparse
 
 import os
 
-from models import database_config, File
+from filesdb.models import database_config, File
 
 parser = argparse.ArgumentParser(description='Files db')
 
