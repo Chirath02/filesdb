@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(description='Files db')
 commands = ['scan', 'version', 'quickscan']
 
 parser.add_argument('scan', default=False, choices=commands,
-                    help='root dir to start processing files(default is .)')
+                    help='command (ex: scan. quickscan)')
 
 parser.add_argument('root',
                     help='root dir to start processing files(default is .)',
