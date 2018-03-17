@@ -1,4 +1,4 @@
-# fileDB
+# files DB
 
 The command line utility collects metadata about every file in the given 
 directory.
